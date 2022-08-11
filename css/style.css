@@ -1,2 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Figtree', sans-serif;
+    background-color: #65c0d0;
+}
+
+/* go to top */
+#go-to-top {
+    z-index: 15;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    cursor: pointer;
+    transition: all ease-in-out .4s;
+    background-color: #fff;
+    border-radius: 50%;
+}
+#go-to-top:hover {
+    transform: translateY(-4px);
+}
+#go-to-top i {
+    font-size: 45px;
+    color: rgb(50, 130, 176);
+}
+
+/* navbar */
+.navbar {
+    transition: all ease-in-out .4s;
+    padding: 20px;
+    font-size: 22px;
+    color: rgb(44, 110, 171);
+    box-shadow: 0 0 12px;
+}
+
+/* main */
+main {
+    margin-top: 200px;
+}
+
+/* blog container */
+.blog-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
