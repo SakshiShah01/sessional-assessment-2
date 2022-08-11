@@ -62,3 +62,34 @@ newPostBtn.addEventListener('click', () => {
         clickTemplate = 0;
     }
 });
+
+// publish new article (in blog container)
+const blogContainer = document.querySelector(".blog-container");
+const publishArticleBtn = document.querySelector("#post-article");
+publishArticleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const newPostTitle = document.querySelector("#new-title").value;
+    const newPostBody = document.querySelector("#new-body").value;
+    const newArticleID = document.querySelector("#new-article-id").value;
+    const newUserID = document.querySelector("#new-user-id").value;
+
+    document.querySelector(".blog-container").innerHTML += 
+    `<div class="card">
+        <div class="card-body">
+            <h5 class="card-title">${newPostTitle}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Article ${newArticleID}, By User-${newUserID}</h6>
+            <p class="card-text">${newPostBody}</p>
+        </div>
+    </div>`;
+
+    // scroll to bottom to see the newly published post (if the post is published)
+    window.scrollTo(0, document.body.scrollHeight);
+
+    // after a few seconds, add a popup saying 'article published!'
+    document.querySelector('#article-published-card').style.top = "90vh";
+    // close article published pop-up
+    setTimeout(()=>{
+        document.querySelector('#article-published-card').style.top = "105vh";
+    }, 2200);
+});
